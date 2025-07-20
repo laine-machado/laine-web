@@ -66,35 +66,35 @@ body {
     height: auto;
 }
 .icon-img1:hover {
-    content: url("Imagens/social_icon_color_resized_1.png");
+    content: url("/Imagens/social_icon_color_resized_1.png");
 }
 .icon-img2 {
     width: 30px;
     height: auto;
 }
 .icon-img2:hover {
-    content: url("Imagens/social_icon_color_resized_2.png");
+    content: url("/Imagens/social_icon_color_resized_2.png");
 }
 .icon-img3 {
     width: 30px;
     height: auto;
 }
 .icon-img3:hover {
-    content: url("Imagens/social_icon_color_resized_3.png");
+    content: url("/Imagens/social_icon_color_resized_3.png");
 }
 .icon-img4 {
     width: 30px;
     height: auto;
 }
 .icon-img4:hover {
-    content: url("Imagens/social_icon_color_resized_4.png");
+    content: url("/Imagens/social_icon_color_resized_4.png");
 }
 .icon-img5 {
     width: 30px;
     height: auto;
 }
 .icon-img5:hover {
-    content: url("Imagens/social_icon_color_resized_5.png");
+    content: url("/Imagens/social_icon_color_resized_5.png");
 }
 .image-size {
     margin: 0 auto;
@@ -148,80 +148,157 @@ body {
 }
 /*Alinhamento dos ícones - Parte Perfil*/
 .hobbies-icon {
-  width: 25px; 
-  height: auto;
-  vertical-align: middle;
+    width: 25px; 
+    height: auto;
+    vertical-align: middle;
 }
 .miniaturas {
-      width: 150px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      transition: transform 0.2s;
+    width: 150px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: transform 0.2s;
 }
 .miniaturas:hover {
-      transform: scale(1.05);
+    transform: scale(1.05);
 }
-.menu-toggle {
-  display: none;
+#openMenuBtn {
+    display: none;
+}
+#mobileMenu {
+    display: none; 
 }
 @media (max-width: 768px) {
-  body {
+body {
     width: 100%;
     padding-top: 0;
     margin: 0;
-  }
-  .div-midias {
+}
+.div-midias {
     display: none;
-  }
+}
 
-  .div-left, .div-top, .div-bottom {
+.div-left, .div-top, .div-bottom {
     float: none;
     width: 100%;
     height: auto;
     border-radius: 0;
     padding: 15px;
     box-sizing: border-box;
-  }
+}
 
-  .header {
+.header {
     font-size: 60px;
     text-align: left;
-  }
+}
 
-  .sub-header {
+.sub-header {
     font-size: 30px;
     text-align: left;
-  }
-
-  /* Mostra botão de menu só no celular */
-  .menu-toggle {
-    display: block;
-    background-color: #363636;
-    color: white;
-    padding: 10px 15px;
-    font-size: 24px;
-    border: none;
-    border-radius: 10px;
-    margin: 10px auto;
-    cursor: pointer;
-  }
-
-  /* Menu drop inicialmente oculto */
-  .menu {
-    flex-direction: column;
-    gap: 10px;
+}
+.menu {
     display: none;
-    margin: 0 auto;
-    padding: 0;
-  }
+}
+  /* Mostra botão de menu só no celular */
+#openMenuBtn {
+  display: block;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1100; /* Acima do menu e overlay */
+  color: darkcyan;
+}
 
-  /* Classe que mostra menu ao clicar */
-  .menu.show {
-    display: flex;
-  }
+/* Menu lateral */
+#mobileMenu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0; /* aparece do lado direito */
+  width: 260px;
+  height: 100%;
+  background-color: darkcyan;
+  opacity: 75%; /* fundo escuro */
+  color: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+  padding: 40px 20px 20px;
+  transform: translateX(100%); /* inicia escondido à direita */
+  transition: transform 0.3s ease;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
 
-  .menu li {
-    text-align: center;
-    padding: 10px;
-  }
+/* Mostrar menu */
+#mobileMenu.menu-show {
+  transform: translateX(0);
+}
+
+/* Botão fechar dentro do menu */
+#closeMenuBtn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+/* Lista do menu */
+#mobileMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+#mobileMenu ul li {
+  margin-bottom: 30px;
+}
+
+#mobileMenu ul li a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+#mobileMenu ul li a:hover {
+  border-color: white;
+}
+
+/* Overlay escuro atrás do menu */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: darkcyan(0,0,0,0.6);
+  opacity: 50%;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#overlay.overlay-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Esconder menu e overlay (classe inicial) */
+.menu-hidden {
+  transform: translateX(100%);
+}
+
+.overlay-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 }
