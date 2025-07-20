@@ -66,21 +66,21 @@ body {
     height: auto;
 }
 .icon-img1:hover {
-    content: url("/Imagens/social_icon_color_resized_1.png");
+    content: url("Imagens/social_icon_color_resized_1.png");
 }
 .icon-img2 {
     width: 30px;
     height: auto;
 }
 .icon-img2:hover {
-    content: url("/Imagens/social_icon_color_resized_2.png");
+    content: url("Imagens/social_icon_color_resized_2.png");
 }
 .icon-img3 {
     width: 30px;
     height: auto;
 }
 .icon-img3:hover {
-    content: url("/Imagens/social_icon_color_resized_3.png");
+    content: url("Imagens/social_icon_color_resized_3.png");
 }
 .icon-img4 {
     width: 30px;
@@ -94,7 +94,7 @@ body {
     height: auto;
 }
 .icon-img5:hover {
-    content: url("/Imagens/social_icon_color_resized_5.png");
+    content: url("Imagens/social_icon_color_resized_5.png");
 }
 .image-size {
     margin: 0 auto;
