@@ -1,0 +1,26 @@
+<main style="align-items: center;">
+    <strong id="cyan" style="font-size: 25px;">CONTATO</strong><br>
+    <b style="color: black;">Vamos trabalhar juntos? Mande uma mensagem e entre em contato comigo.</b>
+    <br><br>
+
+    <form id="contato" method="POST">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" id="nome" placeholder="Digite o seu nome" required><br>
+
+        <label for="email">E-mail: </label>
+        <input type="email" name="email" id="email" placeholder="Digite o seu e-mail" required><br>
+
+        <label for="sexo">Sexo:</label><br>
+        <input type="radio" id="masculino" name="genero" value="masculino">
+        <label for="masculino" style="font-size: 14px;">Masculino</label>        
+        <input type="radio" id="feminino" name="genero" value="feminino">
+        <label for="feminino" style="font-size: 14px;">Feminino</label>   
+        <input type="radio" id="outro" name="genero" value="outro">
+        <label for="outro" style="font-size: 14px;">Outro</label><br>   
+ 
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea name="mensagem" cols="35" rows="8" id="mensagem" placeholder="Digite a sua mensagem" required></textarea><br>
+        
+        <button type="submit" onclick="return alertaEnvio()">Enviar</button>
+    </form>
+</main>

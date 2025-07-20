@@ -1,0 +1,227 @@
+/*Corpo da página e configurações padrões*/
+body {
+    background-color: #012840; 
+    color: #666666;
+    width: 1000px;
+    padding-top: 50px;
+    margin: auto;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+} 
+#cyan {
+    color: darkcyan
+}
+#grey {
+    color: #666666;
+}
+/*Painel do lado esquerdo - Foto*/
+.div-left {
+    width: 400px;
+    height: 380px;
+    background-color: white;
+    float: left;
+    box-sizing: border-box;
+    border-top-left-radius: 30px;
+    overflow: hidden;
+}
+/*Painel do topo - Menu*/
+.div-top {
+    width: 600px;
+    height: 380px;
+    padding: 50px 15px;
+    float: right;
+    background-color: white;
+    border-top-right-radius: 30px;
+    box-sizing: border-box;
+    text-align: left;
+}
+/*Painel de baixo - Conteúdo*/
+.div-bottom {
+    width: 1000px;
+    padding: 30px 50px;
+    float: right;
+    background-color: #F2F2F2;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-sizing: border-box;
+}
+/*Painel com botões clicáveis das minhas mídas sociais*/
+.div-midias {
+    position: static;
+    direction: rtl; 
+    text-align: right;
+    width: 1000px;
+    gap: 10px;
+    margin-top: 15px;
+    padding-right: 15px;
+    position: absolute;
+    box-sizing: border-box;
+}
+.div-midias img {
+    width: 30px; 
+    height: auto;
+}
+.icon-img1 {
+    width: 30px;
+    height: auto;
+}
+.icon-img1:hover {
+    content: url("/Imagens/social_icon_color_resized_1.png");
+}
+.icon-img2 {
+    width: 30px;
+    height: auto;
+}
+.icon-img2:hover {
+    content: url("/Imagens/social_icon_color_resized_2.png");
+}
+.icon-img3 {
+    width: 30px;
+    height: auto;
+}
+.icon-img3:hover {
+    content: url("/Imagens/social_icon_color_resized_3.png");
+}
+.icon-img4 {
+    width: 30px;
+    height: auto;
+}
+.icon-img4:hover {
+    content: url("/Imagens/social_icon_color_resized_4.png");
+}
+.icon-img5 {
+    width: 30px;
+    height: auto;
+}
+.icon-img5:hover {
+    content: url("/Imagens/social_icon_color_resized_5.png");
+}
+.image-size {
+    margin: 0 auto;
+    display: block;
+}
+/*Título com meu nome*/
+.header {
+    font-size: 100px;
+    font-weight: 600;
+    color: darkcyan;
+    line-height: 0.8;
+    margin: 0;
+}
+/*Subtítulo*/
+.sub-header {
+    font-size: 40px;
+    color: darkgray;
+    margin: 0;
+    line-height: 0.9;
+}
+/*Menu principal de navegação*/
+.menu {
+    display: flex;
+    list-style: none;  
+    padding: 8px;
+    margin: 25px 45px;
+    gap: 10px;
+    font-size: 20px;
+}
+.menu li {
+    background-color: #363636;
+    color: white;                
+    padding: 0px 10px;    
+    border-radius: 30px;
+    font-weight: 450;
+    cursor: pointer;
+ }
+
+.menu li:hover {
+    background-color: darkcyan;
+    color: white;
+}
+.menu li:visited {
+    background-color: #363636;
+    color: white;
+}
+.menu li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+/*Alinhamento dos ícones - Parte Perfil*/
+.hobbies-icon {
+  width: 25px; 
+  height: auto;
+  vertical-align: middle;
+}
+.miniaturas {
+      width: 150px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      transition: transform 0.2s;
+}
+.miniaturas:hover {
+      transform: scale(1.05);
+}
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    padding-top: 0;
+    margin: 0;
+  }
+  .div-midias {
+    display: none;
+  }
+
+  .div-left, .div-top, .div-bottom {
+    float: none;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .header {
+    font-size: 60px;
+    text-align: left;
+  }
+
+  .sub-header {
+    font-size: 30px;
+    text-align: left;
+  }
+
+  /* Mostra botão de menu só no celular */
+  .menu-toggle {
+    display: block;
+    background-color: #363636;
+    color: white;
+    padding: 10px 15px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px auto;
+    cursor: pointer;
+  }
+
+  /* Menu drop inicialmente oculto */
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Classe que mostra menu ao clicar */
+  .menu.show {
+    display: flex;
+  }
+
+  .menu li {
+    text-align: center;
+    padding: 10px;
+  }
+}
