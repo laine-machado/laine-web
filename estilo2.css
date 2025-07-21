@@ -87,7 +87,7 @@ body {
     height: auto;
 }
 .icon-img4:hover {
-    content: url("/Imagens/social_icon_color_resized_4.png");
+    content: url("Imagens/social_icon_color_resized_4.png");
 }
 .icon-img5 {
     width: 30px;
